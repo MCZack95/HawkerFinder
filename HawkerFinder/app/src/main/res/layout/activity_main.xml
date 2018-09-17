@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="6">
+
+    <TextView
+        android:layout_weight="1"
+        android:gravity="center"
+        android:id="@+id/main_page_title"
+        android:text="@string/app_name"
+        android:textColor="#000000"
+        android:textAlignment="center"
+        android:textSize="50sp"
+        android:fontFamily="cursive"
+        android:background="#DFFFFFBF"
+        android:layout_width="match_parent"
+        android:layout_height="0sp" />
+
+    <Space
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0sp" />
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:id="@+id/search_layout"
+        android:background="@drawable/rounded_button"
+        android:padding="8sp"
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <ImageView
+            android:layout_weight="1"
+            android:id="@+id/search_image_view"
+            android:background="@drawable/red_search_icon"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/search"/>
+
+        <Button
+            android:layout_weight="3"
+            android:id="@+id/search_button"
+            android:background="#00F5F5F5"
+            android:text="@string/search"
+            android:textAllCaps="false"
+            android:textColor="#E43F3F"
+            android:textSize="25sp"
+            android:fontFamily="monospace"
+            android:layout_width="0sp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:id="@+id/stall_layout"
+        android:background="@drawable/rounded_button"
+        android:padding="8sp"
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <ImageView
+            android:layout_weight="1"
+            android:id="@+id/stall_image_view"
+            android:background="@drawable/stall"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/stall"/>
+
+        <Button
+            android:layout_weight="3"
+            android:id="@+id/stall_button"
+            android:background="#00F5F5F5"
+            android:text="@string/stall"
+            android:textAllCaps="false"
+            android:textColor="#E43F3F"
+            android:textSize="25sp"
+            android:fontFamily="monospace"
+            android:layout_width="0sp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_weight="1"
+        android:id="@+id/about"
+        android:text="@string/about"
+        android:textSize="20sp"
+        android:textColor="#FFFF00"
+        android:fontFamily="casual"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="0sp" />
+
+    <Space
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0sp" />
+
+</LinearLayout>

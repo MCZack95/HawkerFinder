@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">HawkerFinder</string>
+    <string name="search">Advanced Search</string>
+    <string name="stall">Browse Stalls</string>
+    <string name="title_activity__maps">Map</string>
+    <string name="current_location"><u>Current Location</u></string>
+    <string name="latitude">Latitude:</string>
+    <string name="longitude">Longitude:</string>
+    <string name="postal_code">Postal Code:</string>
+    <string name="example_search">e.g. Singapore XXXXXX</string>
+    <string name="app_name_stall">HawkerFinder</string>
+    <string name="about"><u>FIND OUT ABOUT US</u></string>
+    <string name="stall_address">Stall Address</string>
+    <string name="email">Find Me @<u>yeo_zh@hotmail.com</u></string>
+    <string name="description">Our goal is to develop an App that enables Singaporeans or foreigners in Singapore to find and locate Singapore’s Hawker Centres. This will make Singapore’s hawker centres easier to find and their details more accessible.</string>
+</resources>
