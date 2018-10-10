@@ -209,7 +209,6 @@ public class Activity_Maps extends FragmentActivity implements OnMapReadyCallbac
                 myDialog.show();
             }
         });
-
     }
 
     @Override
@@ -288,8 +287,9 @@ public class Activity_Maps extends FragmentActivity implements OnMapReadyCallbac
                                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, DEFAULT_ZOOM));
 
                                 NearbyStalls nearbyStalls = new NearbyStalls();
-                                nearbyStalls.execute(defaultAddress.getPostalCode());
-
+                                if(defaultAddress != null) {
+                                    nearbyStalls.execute(defaultAddress.getPostalCode());
+                                }
                             }else{
                                 getDeviceLocation();
                             }
@@ -311,7 +311,6 @@ public class Activity_Maps extends FragmentActivity implements OnMapReadyCallbac
             Toast.makeText(v.getContext(),"Please wait...\nNearby locations are being loaded.",Toast.LENGTH_LONG).show();
             return;
         }
-
         mapReset();
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(Activity_Maps.this);
         mBuilder.setCancelable(true);
@@ -384,10 +383,10 @@ public class Activity_Maps extends FragmentActivity implements OnMapReadyCallbac
                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(defaultLatLng, DEFAULT_ZOOM));
 
                 NearbyStalls nearbyStalls = new NearbyStalls();
-
                 if(defaultAddress != null) {
                     nearbyStalls.execute(defaultAddress.getPostalCode());
                 }
+
             } catch (IndexOutOfBoundsException e) {
                 Toast.makeText(Activity_Maps.this, "Location not found", Toast.LENGTH_SHORT).show();
             }
