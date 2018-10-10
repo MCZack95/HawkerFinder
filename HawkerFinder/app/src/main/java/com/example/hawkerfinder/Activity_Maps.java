@@ -384,7 +384,10 @@ public class Activity_Maps extends FragmentActivity implements OnMapReadyCallbac
                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(defaultLatLng, DEFAULT_ZOOM));
 
                 NearbyStalls nearbyStalls = new NearbyStalls();
-                nearbyStalls.execute(defaultAddress.getPostalCode());
+
+                if(defaultAddress != null) {
+                    nearbyStalls.execute(defaultAddress.getPostalCode());
+                }
             } catch (IndexOutOfBoundsException e) {
                 Toast.makeText(Activity_Maps.this, "Location not found", Toast.LENGTH_SHORT).show();
             }
@@ -503,6 +506,9 @@ public class Activity_Maps extends FragmentActivity implements OnMapReadyCallbac
 
     private String getUrl(LatLng origin, LatLng dest) {
 
+        // Api Key
+        String str_apiKey = "key=AIzaSyCVsOpqZpqeb84lHNQJ4ti9do1AhmI9rcE";
+
         // Origin of route
         String str_origin = "origin=" + origin.latitude + "," + origin.longitude;
 
@@ -513,7 +519,7 @@ public class Activity_Maps extends FragmentActivity implements OnMapReadyCallbac
         String sensor = "sensor=false";
 
         // Building the parameters to the web service
-        String parameters = str_origin + "&" + str_dest + "&" + sensor;
+        String parameters = str_apiKey + "&" + str_origin + "&" + str_dest + "&" + sensor;
 
         // Output format
         String output = "json";
@@ -689,8 +695,11 @@ public class Activity_Maps extends FragmentActivity implements OnMapReadyCallbac
             if (filteredAddressArrayList.size() == 0)
                 return null;
 
-            nearbyAddressLocations.addAll(filteredAddressArrayList);
-            return "Success: Nearby Locations found.";
+            if(nearbyAddressLocations != null) {
+                nearbyAddressLocations.addAll(filteredAddressArrayList);
+                return "Success: Nearby Locations found.";
+            }
+            return null;
         }
 
         @Override
